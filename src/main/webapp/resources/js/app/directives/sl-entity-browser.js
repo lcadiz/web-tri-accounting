@@ -1,8 +1,8 @@
 (function () {
     var app;
-    var app = angular.module('cmnSLEntityBrowserApp', ['entityFactory']);
+    var app = angular.module('cmnSLEntityBrowserApp', ['entityFactory', 'utilService']);
 
-    app.directive('slEntityBrowser', ['$timeout', 'entityFactory', function ($timeout, entityFactory) {
+    app.directive('slEntityBrowser', ['$timeout', 'entityFactory', 'slEntityUtil', function ($timeout, entityFactory, slEntityUtil) {
         return {
             scope : {
                 btnLabel : '@',
@@ -29,6 +29,16 @@
                             entity: entity
                         });
                     });
+                }
+
+                scope.convert = function(marker) {
+                    var obj = slEntityUtil.markerToString(marker);
+                    return obj.type;
+                }
+
+                scope.entityClass = function(marker) {
+                    var obj = slEntityUtil.markerToString(marker);
+                    return obj.class;
                 }
             }
         };

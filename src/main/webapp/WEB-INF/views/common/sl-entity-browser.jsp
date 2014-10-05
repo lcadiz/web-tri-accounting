@@ -37,7 +37,7 @@
                                     <tbody>
                                     <tr data-dismiss="modal" ng-repeat="entity in entities = (slEntities | filter:query)" style="cursor: pointer" ng-click="selectEntity(entity)">
                                         <td style="width: 100px;">{{entity.accountNo}}</td>
-                                        <td style="width: 480px;">{{entity.name}} {{entity.marker}}</td>
+                                        <td style="width: 480px;">{{entity.name}} <span class="label {{entityClass(entity.marker)}} pull-right">{{convert(entity.marker)}}</span></td>
                                         <td>{{entity.address}}</td>
                                     </tr>
                                     <tr ng-show="entities.length == 0"><td colspan="3" align="center">No records found</td></tr>

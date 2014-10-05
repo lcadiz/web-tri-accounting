@@ -12,7 +12,7 @@
                 <p>You selected account: <b>{{selectedAccount ? (selectedAccount.code + ' ' + selectedAccount.title) : 'None'}}</b></p>
                 <div account-browser-s btn_label="Browse accounts" handler="accounts_selection_handler(account)" />
             </div>
-
+            <p></p>
             <div ng-controller="sleCtrl">
                 <p>You selected entity: <b>{{selectedEntity ? (selectedEntity.accountNo + ' ' + selectedEntity.name) : 'None'}}</b></p>
                 <div sl-entity-browser btn_label="Browse entities" handler="entity_selection_handler(entity)" />
@@ -26,6 +26,7 @@
 <script src="<c:url value="/resources/js/app/factories/account-factory.js" />"></script>
 <script src="<c:url value="/resources/js/app/directives/account-browser-s.js" />"></script>
 
+<script src="<c:url value="/resources/js/app/services/util-service.js" />"></script>
 <script src="<c:url value="/resources/js/app/factories/entity-factory.js" />"></script>
 <script src="<c:url value="/resources/js/app/directives/sl-entity-browser.js" />"></script>
 
