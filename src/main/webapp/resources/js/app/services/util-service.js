@@ -2,7 +2,6 @@ var utilService = angular.module('utilService', []);
 
 utilService.service('slEntityUtil', function() {
     this.markerToString = function(marker) {
-        console.log(marker);
         if (marker == 1) return {type : "Employee", class: "label-warning"};
         if (marker == 2) return {type : "Supplier", class: "label-info"};
         if (marker == 3) return {type : "Asset", class: "label-danger"};

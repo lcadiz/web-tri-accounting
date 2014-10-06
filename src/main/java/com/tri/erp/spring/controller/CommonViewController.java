@@ -26,4 +26,9 @@ public class CommonViewController {
     public String getSlEntityBrowser() {
         return "common/sl-entity-browser";
     }
+
+    @RequestMapping("/item-browser")
+    public String getItemBrowser() {
+        return "common/item-browser";
+    }
 }

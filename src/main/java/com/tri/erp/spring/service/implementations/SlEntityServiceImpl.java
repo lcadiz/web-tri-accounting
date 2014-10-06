@@ -18,6 +18,6 @@ public class SlEntityServiceImpl implements SlEntityService {
 
     @Override
     public List<SlEntity> findAll() {
-        return slEntityRepo.findAllOrderByNameAsc();
+        return slEntityRepo.findAllByOrderByNameAsc();
     }
 }
