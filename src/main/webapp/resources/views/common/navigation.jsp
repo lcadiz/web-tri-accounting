@@ -1,3 +1,12 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: ENGKOI
+  Date: 10/6/2014
+  Time: 11:57 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
         <ul side-navigation class="nav" id="side-menu">
@@ -36,9 +45,10 @@
             <li>
                 <a href=""><i class="fa fa-paper-plane"></i> <span class="nav-label">Create New</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li ui-sref-active="active"><a ui-sref="flot_chart">Create New</a></li>
+
                     <li ui-sref-active="active"><a ui-sref="morris_chart">Requisition</a></li>
                     <li ui-sref-active="active"><a ui-sref="rickshaw_chart">Purchase Order</a></li>
+                    <li ui-sref-active="active"><a ui-sref="flot_chart">Job Order</a></li>
                 </ul>
             </li>
             <li>
