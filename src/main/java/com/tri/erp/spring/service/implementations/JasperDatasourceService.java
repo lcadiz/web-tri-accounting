@@ -26,7 +26,7 @@ public class JasperDatasourceService {
 	 * Returns a data source that's wrapped within {@link JRDataSource}
 	 * @return
 	 */
-	public JRDataSource getDataSource() {
+	public JRDataSource getCoaDataSource() {
 
         List<Account> topLevelAccounts = accountRepo.findByParentAccountIdOrderByCodeAsc(0);// top level accounts
         for(Account account : topLevelAccounts) {

@@ -47,7 +47,6 @@ public class ChartOfAccountsController {
 
 
     // coa print
-
     @RequestMapping(value="/download/progress")
     public @ResponseBody
     StatusResponse checkDownloadProgress(@RequestParam String token) {
