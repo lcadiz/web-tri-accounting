@@ -3,9 +3,8 @@ package com.tri.erp.spring.service.implementations;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tri.erp.spring.model.Account;
 import com.tri.erp.spring.repo.AccountRepo;
-import com.tri.erp.spring.reponse.JasperDto;
+import com.tri.erp.spring.reponse.CoaPrintDto;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
@@ -23,8 +22,12 @@ public class JasperDatasourceService {
 	 * @return
 	 */
 	public JRDataSource getDataSource() {
-		List<Account> records = accountRepo.findAll();
-		List<JasperDto> dtos = new ArrayList<>();
+		List<CoaPrintDto> dtos = new ArrayList<>();
+
+        CoaPrintDto c1 = new CoaPrintDto();
+        c1.setTitle("Test");
+
+        dtos.add(c1);
 
 		// Return wrapped collection
 		return new JRBeanCollectionDataSource(dtos);

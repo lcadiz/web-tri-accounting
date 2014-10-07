@@ -211,6 +211,12 @@
             <artifactId>jasperreports</artifactId>
             <version>5.6.1</version>
         </dependency>
+        <!--jasper includes -->
+        <dependency>
+            <groupId>com.lowagie</groupId>
+            <artifactId>itext</artifactId>
+            <version>4.2.1</version>
+        </dependency>
 
     </dependencies>
     <build>

@@ -6,6 +6,7 @@ import java.util.HashMap;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 
+import com.tri.erp.spring.commons.GlobalConstant;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -21,7 +22,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class DownloadService {
 
-	public static final String TEMPLATE = "/users.jrxml";
+	public static final String TEMPLATE = GlobalConstant.JASPER_BASE_PATH + "/coa/ChartOfAccounts.jrxml";
 	protected static Logger logger = Logger.getLogger("service");
 
 	@Autowired
