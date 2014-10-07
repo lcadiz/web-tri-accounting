@@ -13,6 +13,7 @@
 	<field name="title" class="java.lang.String">
 		<fieldDescription><![CDATA[title]]></fieldDescription>
 	</field>
+	<field name="type" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -77,16 +78,31 @@
 			<line>
 				<reportElement uuid="d00a72f3-751f-49c7-abd8-32a23915f9a9" x="0" y="20" width="572" height="1"/>
 			</line>
+			<staticText>
+				<reportElement uuid="ea7231c7-99d5-4207-8b3c-c2c7d48e06ab" mode="Transparent" x="442" y="1" width="106" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Calibri Light" size="11" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[TYPE]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="15" splitType="Stretch">
 			<textField isBlankWhenNull="true">
-				<reportElement uuid="e6035b55-5419-4047-b38c-56a66de90a64" x="0" y="0" width="572" height="15"/>
+				<reportElement uuid="e6035b55-5419-4047-b38c-56a66de90a64" x="0" y="0" width="440" height="15"/>
 				<textElement verticalAlignment="Middle" markup="html">
 					<font fontName="Calibri Light"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="5ac4ec58-2e05-4da2-a359-d091fc0eb02f" x="442" y="-1" width="130" height="16"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Calibri Light"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

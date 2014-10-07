@@ -39,8 +39,10 @@ public class DownloadService {
 		try {
 			// 1. Add report parameters
 			HashMap<String, Object> params = new HashMap<String, Object>(); 
-			params.put("Title", "User Report");
-			 
+			params.put("COM_NAME", "Your company");
+			params.put("COM_ADDRESS", "You Address");
+			params.put("LOGO_PATH", GlobalConstant.REPORT_LOGO_PATH);
+
 			// 2.  Retrieve template
 			InputStream reportStream = this.getClass().getResourceAsStream(TEMPLATE); 
 			 
