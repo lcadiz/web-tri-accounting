@@ -208,6 +208,10 @@ coaControllers.controller('treeGridCtrl',  ['$scope', 'accountFactory', function
         console.log('you clicked on', branch)
     }
 
+    $scope.printCoa = function() {
+        toastr.info("Printing coa...");
+    }
+
     function getTree(data, primaryIdName, parentIdName){
         if(!data || data.length==0 || !primaryIdName ||!parentIdName)
             return [];
