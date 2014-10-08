@@ -71,8 +71,7 @@ public class ChartOfAccountsController {
                          @RequestParam(value = "token") String token,
                          HttpServletResponse response, HttpServletRequest request) {
 
-        HashMap<String, Object> params = ReportUtil.setupSharedReportHeaders();
-        params.put("COMP_ADDRESS", request.);
+        HashMap<String, Object> params = ReportUtil.setupSharedReportHeaders(request);
 
         String template = GlobalConstant.JASPER_BASE_PATH + "/coa/ChartOfAccounts.jrxml";
         downloadService.download(type, token, response, params, template, datasource.getCoaDataSource());

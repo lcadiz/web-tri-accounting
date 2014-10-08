@@ -48,6 +48,10 @@
 				</textElement>
 				<text><![CDATA[CHART OF ACCOUNTS]]></text>
 			</staticText>
+			<image>
+				<reportElement uuid="4a717a30-50b4-43e9-94f0-2153166e8027" x="89" y="0" width="60" height="52"/>
+				<imageExpression><![CDATA[$P{LOGO_PATH} + "/report-logo.jpg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
