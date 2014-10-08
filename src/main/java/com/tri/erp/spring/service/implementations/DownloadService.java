@@ -54,7 +54,7 @@ public class DownloadService {
 			 
 			// 5. Create the JasperPrint object
 			// Make sure to pass the JasperReport, report parameters, and data source
-			JasperPrint jp = JasperFillManager.fillReport(jr, params, datasource.getDataSource());
+			JasperPrint jp = JasperFillManager.fillReport(jr, params, datasource.getCoaDataSource());
 			 
 			// 6. Create an output byte stream where data will be written
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
