@@ -3,8 +3,8 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<parameter name="COM_NAME" class="java.lang.String" isForPrompting="false"/>
-	<parameter name="COM_ADDRESS" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="COMP_NAME" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="COMP_ADDRESS" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="SEGMENT" class="java.lang.String"/>
 	<parameter name="LOGO_PATH" class="java.lang.String"/>
 	<queryString>
@@ -19,27 +19,6 @@
 	</background>
 	<title>
 		<band height="79" splitType="Stretch">
-			<textField isBlankWhenNull="true">
-				<reportElement uuid="cceff68b-2749-43fb-b145-964804773e89" x="0" y="17" width="572" height="15"/>
-				<textElement textAlignment="Center">
-					<font fontName="Calibri Light" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{COM_ADDRESS}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement uuid="dc501aaf-3902-4ef7-8291-14cb213deef4" x="0" y="0" width="572" height="17"/>
-				<textElement textAlignment="Center">
-					<font fontName="Calibri Light" size="11" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{COM_NAME}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement uuid="5dd45294-4556-4a18-af85-a67c74926d1e" x="0" y="39" width="572" height="20"/>
-				<textElement textAlignment="Center">
-					<font fontName="Calibri Light" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[CHART OF ACCOUNTS]]></text>
-			</staticText>
 			<textField pattern="" isBlankWhenNull="true">
 				<reportElement uuid="bb0150b9-9db8-4831-8df5-3eafdf1c899e" mode="Transparent" x="0" y="59" width="572" height="16" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
@@ -48,10 +27,27 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$P{SEGMENT}]]></textFieldExpression>
 			</textField>
-			<image isLazy="true" onErrorType="Icon">
-				<reportElement uuid="68def9f2-77c5-4a6e-868f-b5e9000b453e" x="89" y="0" width="60" height="52"/>
-				<imageExpression><![CDATA[$P{LOGO_PATH}]]></imageExpression>
-			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="cceff68b-2749-43fb-b145-964804773e89" x="0" y="17" width="572" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{COMP_ADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="dc501aaf-3902-4ef7-8291-14cb213deef4" x="0" y="0" width="572" height="17"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{COMP_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5dd45294-4556-4a18-af85-a67c74926d1e" x="0" y="39" width="572" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri Light" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CHART OF ACCOUNTS]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>

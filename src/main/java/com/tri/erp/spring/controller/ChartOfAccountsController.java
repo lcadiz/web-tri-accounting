@@ -1,13 +1,18 @@
 package com.tri.erp.spring.controller;
 
+import com.tri.erp.spring.commons.GlobalConstant;
+import com.tri.erp.spring.commons.helpers.ReportUtil;
 import com.tri.erp.spring.reponse.StatusResponse;
 import com.tri.erp.spring.service.implementations.DownloadService;
+import com.tri.erp.spring.service.implementations.JasperDatasourceService;
 import com.tri.erp.spring.service.implementations.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 
 /**
  * Created by TSI Admin on 9/9/2014.
@@ -20,6 +25,9 @@ public class ChartOfAccountsController {
 
     @Autowired
     private TokenService tokenService;
+
+    @Autowired
+    private JasperDatasourceService datasource;
 
     private final String BASE_PATH = "admin/coa/partials/";
 
@@ -61,8 +69,13 @@ public class ChartOfAccountsController {
     @RequestMapping(value="/download")
     public void download(@RequestParam(value = "type") String type,
                          @RequestParam(value = "token") String token,
-                         HttpServletResponse response) {
-        downloadService.download(type, token, response);
+                         HttpServletResponse response, HttpServletRequest request) {
+
+        HashMap<String, Object> params = ReportUtil.setupSharedReportHeaders();
+        params.put("COMP_ADDRESS", request.);
+
+        String template = GlobalConstant.JASPER_BASE_PATH + "/coa/ChartOfAccounts.jrxml";
+        downloadService.download(type, token, response, params, template, datasource.getCoaDataSource());
     }
 }
 
