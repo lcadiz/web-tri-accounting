@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tri.erp.spring.model.Account;
+import com.tri.erp.spring.model.Item;
 import com.tri.erp.spring.repo.AccountRepo;
+import com.tri.erp.spring.repo.ItemRepo;
 import com.tri.erp.spring.reponse.CoaPrintDto;
+import com.tri.erp.spring.reponse.ItemListDto;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
@@ -17,6 +20,9 @@ public class JasperDatasourceService {
 
 	@Autowired
 	private AccountRepo accountRepo;
+
+    @Autowired
+    private ItemRepo itemRepo;
 
     private List<CoaPrintDto> dtos = new ArrayList<>();
     private final String INDENTION = "&nbsp;&nbsp;&nbsp;";
@@ -68,5 +74,24 @@ public class JasperDatasourceService {
         }
     }
 
+    public JRDataSource getItemDataSource() {
+        List<ItemListDto> itemsDto = new ArrayList<>();
+
+        List<Item> items = itemRepo.findAllByOrderByDescriptionAsc();
+
+        for(Item item : items) {
+            ItemListDto itemDto = new ItemListDto();
+
+            itemDto.setCode(item.getCode());
+            itemDto.setDescription(item.getDescription());
+            itemDto.setUnit(item.getUnit().getDescription());
+            itemDto.setAccount(item.getSegmentAccount().getAccount().getTitle());
+
+            itemsDto.add(itemDto);
+
+        }
+        // Return wrapped collection
+        return new JRBeanCollectionDataSource(itemsDto);
+    }
 
 }
