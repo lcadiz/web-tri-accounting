@@ -87,7 +87,7 @@
             <img src="/resources/img/firefly1.png">
 
         </div>
-        <h3>Welcome to Company Name</h3>
+        <h3>Welcome to Ileco</h3>
         <p>Accounting and Inventory System.
             <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
         </p>
