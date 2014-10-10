@@ -15,4 +15,20 @@ public class CommonViewController {
     public String getAccountBrowser() {
         return "common/account-browser";
     }
+
+    @RequestMapping("/account-browser-with-segment")
+    public String getAccountBrowserWithSegment() {
+        return "common/account-browser-with-segment";
+    }
+
+
+    @RequestMapping("/sl-entity-browser")
+    public String getSlEntityBrowser() {
+        return "common/sl-entity-browser";
+    }
+
+    @RequestMapping("/item-browser")
+    public String getItemBrowser() {
+        return "common/item-browser";
+    }
 }
